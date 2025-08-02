@@ -1,12 +1,25 @@
-export interface Favour {
-  id: string;
+import { User } from "./user";
+
+// src/app/models/favor.model.ts
+export interface Favor {
+  _id: string;
   title: string;
-  description: string;
-  createdAt: Date;
-  updatedAt: Date;
-  status: 'Open' | 'in-progress' | 'completed' | 'cancelled';
-  requesterId: string; // User ID of the person who requested the favour
-  assigneeId?: string; // User ID of the person assigned to complete the favour
-  tags?: string[]; // Optional tags for categorization
-  rewards: string[]; // Rewards offered for completing the favour
+  description?: string;
+  reward?: string[]; // Optional user-defined rewards
+
+  status: 'Pending' | 'Completed' | 'Verified';
+  favorType: 'personal' | 'public';
+
+  from: User | string; // Can be a full user object or just ID
+  to?: User | string;
+
+  proofImage?: string;
+  proofUploadedBy?: User | string;
+
+  claimedBy?: User | string;
+  claimedAt?: string;
+
+  requiredBy?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
