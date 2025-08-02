@@ -59,5 +59,15 @@ nav a {
 #sign-btn{
 
   background: #6366F1 !important;
-  color: #fff;
+  color: #fff ;
+}
+
+
+.active{
+  background: var(--primary-color);
+  color: #fff !important;
+}
+
+.nav-btn{
+  border-radius: 10px;
 }

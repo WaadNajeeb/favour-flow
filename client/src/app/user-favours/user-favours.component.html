@@ -1,1 +1,67 @@
-<p>user-favours works!</p>
+<div class="user-favours-container">
+
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <div>
+      <h2>My Favours</h2>
+      <p class="subtitle2">  Track what you owe and what others owe you </p>
+    </div>
+  <button mat-flat-button color="primary" class="add-btn">+ Add New Favor</button>
+  </div>
+
+
+<div class="cards-container">
+  <mat-card class="favor-card">
+    <div class="card">
+      <div class="total">
+        <p class="label">I Owe</p>
+        <p class="value owe-colour">12</p>
+      </div>
+      <div class="icon-wrapper owe">
+        <mat-icon class="owe-colour">arrow_upward</mat-icon>
+      </div>
+    </div>
+  </mat-card>
+  <mat-card class="favor-card">
+    <div class="card">
+      <div class="total">
+        <p class="label">Owed to Me</p>
+        <p class="value owed-colour">8</p>
+      </div>
+
+    <div class="icon-wrapper owed">
+      <mat-icon class="owed-colour" >arrow_downward</mat-icon>
+    </div>
+    </div>
+
+  </mat-card>
+  <mat-card class="favor-card">
+    <div class="card">
+      <div class="total">
+        <p class="label">Completed</p>
+        <p class="value completed-colour">35</p>
+      </div>
+
+      <div class="icon-wrapper completed">
+        <mat-icon class="completed-colour">handshake</mat-icon>
+      </div>
+    </div>
+
+  </mat-card>
+</div>
+
+<mat-tab-group>
+  <mat-tab label="I Owe Others (12)">
+    <app-owe-favours></app-owe-favours>
+  </mat-tab>
+  <mat-tab label="Others Owe Me (8)">
+    <app-owed-favours></app-owed-favours>
+  </mat-tab>
+  <mat-tab label="Completed (35)">
+    <app-completed-favours></app-completed-favours>
+  </mat-tab>
+</mat-tab-group>
+
+<mat-paginator [length]="60" [pageSize]="6" [pageSizeOptions]="[6]" (page)="onPageChange($event)">
+</mat-paginator>
+
+</div>

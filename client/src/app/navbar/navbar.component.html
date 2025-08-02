@@ -6,12 +6,38 @@
 
   <span class="spacer"></span>
 
-  <nav>
-    <a mat-button routerLink="/">Home</a>
-    <a mat-button >Requests</a>
-    <a mat-button routerLink="/leaderboard">Leaderboard</a>
-    <a mat-button>My Favors</a>
-  </nav>
+<nav>
+  <a
+    mat-button
+    class="nav-btn"
+    routerLink="/"
+    [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Home</a
+  >
+  <a
+    mat-button
+    class="nav-btn"
+    routerLink="/requests"
+    [routerLinkActive]="['active']"
+    >Requests</a
+  >
+  <a
+    mat-button
+    class="nav-btn"
+    routerLink="/leaderboard"
+    [routerLinkActive]="['active']"
+    >Leaderboard</a
+  >
+  <a
+    mat-button
+    class="nav-btn"
+    routerLink="/my-favours"
+    [routerLinkActive]="['active']"
+    >My Favors</a
+  >
+</nav>
+
 
   <span class="spacer"></span>
 
