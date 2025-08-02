@@ -18,11 +18,32 @@
   </div>
 </div>
 
-<!-- <section class="cta">
-  <h2>Ready to Start Building Community?</h2>
-  <p>Join KindCoin today and make tracking favors fun and meaningful.</p>
+<section class="cta-section">
+  <h2 style="color:#fff">Ready to Start Tracking Favors?</h2>
+  <p>Join thousands of users building stronger communities through kindness.</p>
   <div class="cta-buttons">
-    <button mat-raised-button color="primary">Create Account</button>
-    <button mat-stroked-button color="primary">Learn More</button>
+    <button mat-flat-button  class="main-btn">Create Account</button>
+    <button mat-stroked-button  class="secondary-btn">Learn More</button>
   </div>
-</section> -->
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="brand">
+      <div class="logo">
+        <mat-icon>handshake</mat-icon>
+        <span>KindLink</span>
+      </div>
+      <p>Connecting communities through acts of kindness.</p>
+    </div>
+
+    @for (group of linkGroups; track group.heading) {
+      <div class="footer-links">
+        <h4>{{ group.heading }}</h4>
+        @for (link of group.links; track link) {
+          <a href="#">{{ link }}</a>
+        }
+      </div>
+    }
+  </div>
+</footer>

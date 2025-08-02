@@ -32,10 +32,20 @@ export class HomeFooterComponent {
       description: 'Strengthen relationships through small acts of kindness and mutual support.',
     },
   ];
+  linkGroups: FooterLinkGroup[] = [
+    {
+      heading: 'Platform',
+      links: ['Requests', 'Leaderboard', 'Dashboard'],
+    },
+  ];
 }
 export interface Feature {
   icon: string;
   color: string;
   title: string;
   description: string;
+}
+export interface FooterLinkGroup {
+  heading: string;
+  links: string[];
 }
