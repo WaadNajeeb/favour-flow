@@ -1,0 +1,41 @@
+<mat-card class="request-card">
+  <div class="header">
+    <div class="left-side">
+      <button mat-icon-button class="avatar" aria-label="Back">
+        <mat-icon class="avatar-icon">person</mat-icon>
+      </button>
+      <div class="user-details">
+        <p class="name">{{ 'Omer Samoel' }}</p>
+        <p class="time">{{ timeAgo }}</p>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <p class="status-chip" [ngClass]="status.toLowerCase()">{{ status }}</p>
+    </div>
+
+  </div>
+
+  <div class="favour-details">
+    <div>
+      <p class="request-title">{{ title }}</p>
+      <p class="request-description">{{ description }}</p>
+    </div>
+
+    <div class="tags">
+      <div style="display: flex; flex-wrap: wrap; gap: 4px; align-items: center;">
+        <p style="color:#6B7280; margin-right:5px">Rewards:</p>
+        @for (tag of tags; track tag) {
+          <p class="tag-chip" [style.background]="generateRandomHexColor()" style="color: #fff;">{{ tag }}</p>
+
+        }
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <button mat-flat-button color="primary" class="accept-btn">
+      Accept Request
+    </button>
+  </div>
+
+</mat-card>

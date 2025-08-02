@@ -1,0 +1,22 @@
+<div class="request-section">
+  <h2>Active Requests</h2>
+  <p class="subtitle">
+    Help your community and earn favors by completing these requests
+  </p>
+
+  <div class="card-grid">
+    @for (req of requests; track $index) {
+
+      <app-request-card
+        [user]="req.user"
+        [timeAgo]="req.timeAgo"
+        [title]="req.title"
+        [description]="req.description"
+        [tags]="req.tags"
+        [avatarUrl]="req.avatarUrl"
+      ></app-request-card>
+    }
+  </div>
+
+  <button mat-stroked-button class="load-more">Load More Requests</button>
+</div>

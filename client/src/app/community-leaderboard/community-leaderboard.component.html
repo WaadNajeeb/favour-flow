@@ -1,0 +1,23 @@
+<div class="leaderboard-wrapper">
+   <h2>Community Leaderboard</h2>
+    <p class="subtitle">Our most helpful community members</p>
+  <mat-card class="leaderboard">
+    @for (user of leaderboard; track user) {
+      <div class="rank"  [ngClass]="'rank-' + user.rank">
+        <div class="info">
+          <div class="number">{{user.rank }}</div>
+          <div class="avatar" aria-label="User Avatar">
+            <mat-icon class="avatar-icon">account_circle</mat-icon>
+          </div>
+          <div class="user-details">
+            <p class="name">{{ user.name }}</p>
+            <p class="subtitle">{{ user.badgeInfo }}</p>
+          </div>
+        </div>
+        <div class="score">
+          {{ user.score }} <span>Favors completed</span>
+        </div>
+      </div>
+    }
+  </mat-card>
+</div>

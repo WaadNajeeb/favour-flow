@@ -1,1 +1,19 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary" class="navbar">
+  <div class="logo-container">
+    <img src="assets/icon-5.svg" alt="KindCoin Logo" class="logo" />
+    <span class="brand-name">FavourFlow</span>
+  </div>
+
+  <span class="spacer"></span>
+
+  <nav>
+    <a mat-button routerLink="/">Home</a>
+    <a mat-button>Requests</a>
+    <a mat-button>Leaderboard</a>
+    <a mat-button>My Favors</a>
+  </nav>
+
+  <span class="spacer"></span>
+
+  <button mat-raised-button id="sign-btn">Sign In</button>
+</mat-toolbar>

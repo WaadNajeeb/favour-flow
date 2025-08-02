@@ -1,0 +1,28 @@
+<div class="how-it-works">
+
+   <h2>How Favour Flow Works</h2>
+    <p class="subtitle">Simple, fun, and transparent favor tracking for your community</p>
+  <div class="features">
+      @for (feature of features; track feature.title) {
+      <div class="feature-item">
+        <div class="icon-wrapper" [ngStyle]="{ backgroundColor: feature.color }">
+          <mat-icon class="feature-icon">{{ feature.icon }}</mat-icon>
+        </div>
+        <h3>{{ feature.title }}</h3>
+        <div style="width: 80%; text-align: center; margin: 0 auto;">
+          <p>{{ feature.description }}</p>
+        </div>
+
+      </div>
+    }
+  </div>
+</div>
+
+<!-- <section class="cta">
+  <h2>Ready to Start Building Community?</h2>
+  <p>Join KindCoin today and make tracking favors fun and meaningful.</p>
+  <div class="cta-buttons">
+    <button mat-raised-button color="primary">Create Account</button>
+    <button mat-stroked-button color="primary">Learn More</button>
+  </div>
+</section> -->
