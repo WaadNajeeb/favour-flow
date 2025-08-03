@@ -6,9 +6,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { Form, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
+import { PasswordComponent } from "../password/password.component";
 @Component({
   selector: 'app-sign-in',
-  imports: [MatIcon, MatFormFieldModule, MatCheckboxModule, MatButtonModule, ReactiveFormsModule, MatError, CommonModule, MatInputModule],
+  imports: [MatIcon, MatFormFieldModule, MatCheckboxModule, MatButtonModule, ReactiveFormsModule, MatError, CommonModule, MatInputModule, PasswordComponent],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.scss'
 })

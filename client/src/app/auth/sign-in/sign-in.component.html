@@ -40,8 +40,8 @@
         <form [formGroup]="signInForm" class="sign-in-form">
           <div class="form-fields" style="display: flex;; flex-direction: column; gap: 20px;">
             <mat-form-field appearance="fill" class="full-width" appearance="outline">
-              <mat-icon matSuffix>email</mat-icon>
               <mat-label>Email</mat-label>
+              <mat-icon class="auth-icons" matIconPrefix>email</mat-icon>
               <input matInput [formControl]="signInForm.controls.email" type="email" placeholder="Enter your email">
               <mat-error *ngIf="signInForm.get('email')?.hasError('required')">
                 Email is required
@@ -51,18 +51,11 @@
               </mat-error>
             </mat-form-field>
 
-            <mat-form-field appearance="fill" class="full-width" appearance="outline">
-              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-              <mat-label>Password</mat-label>
-              <input matInput [formControl]="signInForm.controls.password" type="password"
-                placeholder="Enter your password">
-              <mat-error *ngIf="signInForm.get('password')?.hasError('required')">
-                Password is required
-              </mat-error>
-            </mat-form-field>
+            <app-password [control]="signInForm.controls.password"></app-password>
           </div>
           <div class="extra-options">
-            <mat-checkbox [formControl]="signInForm.controls.rememberMe" class="remember-me" color="#6366F1">Remember Me</mat-checkbox>
+            <mat-checkbox [formControl]="signInForm.controls.rememberMe" class="remember-me" color="#6366F1">Remember
+              Me</mat-checkbox>
             <a href="#" mat-button class="forgot-password">Forgot Password?</a>
           </div>
           <button mat-raised-button class="sign-btn">Sign In</button>
