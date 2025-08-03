@@ -39,7 +39,7 @@ h2{
     gap: 20px;               /* spacing between cards */
     padding: 40px 0;
     flex-wrap: wrap;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
   }
 .favor-card{
@@ -61,6 +61,9 @@ h2{
       background-color: #efeffc;
     }
 
+    .i-completed {
+      background-color: #ecf7f9;
+    }
     .card{
       display: flex;
       justify-content: space-between;
@@ -85,7 +88,9 @@ h2{
 .completed-colour{
   color: #6366f1;
 }
-
+.i-completed-colour{
+  color: #0ab6d4;
+}
 mat-icon{
   transform: scale(1.2);
 }
@@ -105,3 +110,6 @@ mat-icon{
   margin-top: 5px;
 
 }
+
+
+

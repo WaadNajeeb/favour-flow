@@ -37,12 +37,25 @@
   <mat-card class="favor-card">
     <div class="card">
       <div class="total">
-        <p class="label">Completed</p>
+        <p class="label">Completed For Me</p>
         <p class="value completed-colour">35</p>
       </div>
 
       <div class="icon-wrapper completed">
         <mat-icon class="completed-colour">handshake</mat-icon>
+      </div>
+    </div>
+
+  </mat-card>
+  <mat-card class="favor-card">
+    <div class="card">
+      <div class="total">
+        <p class="label">I Completed</p>
+        <p class="value i-completed-colour">40</p>
+      </div>
+
+      <div class="icon-wrapper i-completed">
+        <mat-icon class="i-completed-colour">check_circle</mat-icon>
       </div>
     </div>
 
@@ -56,7 +69,10 @@
   <mat-tab label="Others Owe Me (8)">
     <app-owed-favours></app-owed-favours>
   </mat-tab>
-  <mat-tab label="Completed (35)">
+  <mat-tab label="Completed For Me (35)">
+    <app-completed-favours></app-completed-favours>
+  </mat-tab>
+   <mat-tab label="I Completed (40)">
     <app-completed-favours></app-completed-favours>
   </mat-tab>
 </mat-tab-group>

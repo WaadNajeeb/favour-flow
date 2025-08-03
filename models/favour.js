@@ -1,34 +1,45 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const favorSchema = new Schema({
+const favourSchema = new Schema({
   title:       { type: String, required: true },
   description: { type: String },
 
-  reward:      [{ type: String }], // Optional and user-defined
+  reward:[{ type: String }],
 
   status: {
     type: String,
-    enum: ['pending', 'completed', 'verified'],
-    default: 'pending'
+    enum: ['Pending', 'Completed', 'Verified'],
+    default: 'Pending'
   },
 
-  favorType: {
+  favourType: {
     type: String,
-    enum: ['personal', 'public'],
-    default: 'personal'
+    enum: ['Personal', 'Public'],
+    default: 'Personal'
   },
 
-  from: { type: Schema.Types.ObjectId, ref: 'User', required: true }, // Who owes
-  to:   { type: Schema.Types.ObjectId, ref: 'User' }, // Optional recipient
+  isAnonymous: {
+    type: Boolean,
+    default: false
+  },
 
-  proofImage:      { type: String }, // Optional URL
-  proofUploadedBy: { type: Schema.Types.ObjectId, ref: 'User' },
+  from: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: function() {
+      return !this.isAnonymous;
+    }
+  },
 
-  claimedBy: { type: Schema.Types.ObjectId, ref: 'User' }, // Only for public favors
+  to:   { type: Schema.Types.ObjectId, ref: 'User' },
+
+  proofImage:      { type: String },
+
+  claimedBy: { type: Schema.Types.ObjectId, ref: 'User' },
   claimedAt: { type: Date },
 
   requiredBy: { type: Date },
 }, { timestamps: true });
 
-module.exports = mongoose.model('Favor', favorSchema);
+module.exports = mongoose.model('Favour', favourSchema);

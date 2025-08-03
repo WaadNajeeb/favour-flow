@@ -7,6 +7,20 @@ const RefreshToken = require('../models/refreshToken');
 const { generateAccessToken, generateRefreshToken } = require('../utils/token');
 const { generateAvatar } = require('../services/helper');
 
+
+// LOGIN
+// REGISTER
+router.post("/allUsers", async (req, res) => {
+  try {
+    const users = await User.find({}, '_id'); // Only fetch _id field
+    const userIds = users.map(user => user._id);
+
+    res.status(200).json(userIds);
+  } catch (err) {
+    res.status(500).json({ message: 'Server error', error: err.message });
+  }
+});
+
 // REGISTER
 router.post("/register", async (req, res) => {
   const { firstName, lastName, password, confirmpass, email, avatar } = req.body;
